@@ -17,10 +17,20 @@
 
       <div class="cards-section">
         <div class="card">
-          <img src="../assets/card1.png" alt="Card 1">
+          <!-- <img src="../assets/card1.png" alt="Card 1">
           <img src="../assets/card2.png" alt="Card 1">
           <img src="../assets/card3.png" alt="Card 1">
-          <img src="../assets/card4.png" alt="Card 1">
+          <img src="../assets/card4.png" alt="Card 1"> -->
+          <Card
+            v-for="card in cards"
+            :key="card.alt"
+            :src="card.src"
+            :alt="card.alt"
+            :avatar="card.avatar"
+            :owner="card.owner"
+            :priceUsd="card.priceUsd"
+            :priceEth="card.priceEth"
+          />
         </div>
       </div>
   </div>
@@ -29,8 +39,50 @@
 
 
 <script>
-export default {
+import Card from './Card.vue';
 
+export default {
+  components: {
+    Card
+  },
+  data() {
+    return {
+      cards: [
+        {
+          src: require('../assets/card1.png'),
+          alt: "Card 1",
+          avatar: require('../assets/owner-avatar-1.png'),
+          owner: "Marcelo",
+          priceUsd: "3333$",
+          priceEth: "4.2 ETH"
+        },
+        {
+          src: require('../assets/card2.png'),
+          alt: "Card 2",
+          avatar: require('../assets/owner-avatar-2.png'),
+          owner: "Artur",
+          priceUsd: "3333$",
+          priceEth: "3.2 ETH"
+        },
+        {
+          src: require('../assets/card3.png'),
+          alt: "Card 3",
+          avatar: require('../assets/owner-avatar-3.png'),
+          owner: "Paulista",
+          priceUsd: "3333$",
+          priceEth: "2.2 ETH"
+        },
+        {
+          src: require('../assets/card4.png'),
+          alt: "Card 4",
+          avatar: require('../assets/owner-avatar-4.png'),
+          owner: "Digo",
+          priceUsd: "3333$",
+          priceEth: "1.2 ETH"
+        },
+      ]
+    }
+  }
 }
 </script>
 
@@ -67,4 +119,5 @@ export default {
 .cards-filters a.active, .cards-filters a:hover{
   border: 1px solid #7F35FF;
 }
+
 </style>
