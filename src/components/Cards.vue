@@ -17,10 +17,6 @@
 
       <div class="cards-section">
         <div class="card">
-          <!-- <img src="../assets/card1.png" alt="Card 1">
-          <img src="../assets/card2.png" alt="Card 1">
-          <img src="../assets/card3.png" alt="Card 1">
-          <img src="../assets/card4.png" alt="Card 1"> -->
           <Card
             v-for="card in cards"
             :key="card.alt"
@@ -53,7 +49,7 @@ export default {
           alt: "Card 1",
           avatar: require('../assets/owner-avatar-1.png'),
           owner: "Marcelo",
-          priceUsd: "3333$",
+          priceUsd: "3.333,00$",
           priceEth: "4.2 ETH"
         },
         {
@@ -61,7 +57,7 @@ export default {
           alt: "Card 2",
           avatar: require('../assets/owner-avatar-2.png'),
           owner: "Artur",
-          priceUsd: "3333$",
+          priceUsd: "3.333,00$",
           priceEth: "3.2 ETH"
         },
         {
@@ -69,15 +65,15 @@ export default {
           alt: "Card 3",
           avatar: require('../assets/owner-avatar-3.png'),
           owner: "Paulista",
-          priceUsd: "3333$",
+          priceUsd: "3.333,00$",
           priceEth: "2.2 ETH"
         },
         {
           src: require('../assets/card4.png'),
           alt: "Card 4",
           avatar: require('../assets/owner-avatar-4.png'),
-          owner: "Digo",
-          priceUsd: "3333$",
+          owner: "Diego",
+          priceUsd: "3.333,00$",
           priceEth: "1.2 ETH"
         },
       ]
@@ -120,4 +116,14 @@ export default {
   border: 1px solid #7F35FF;
 }
 
+.cards-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card{
+  display: flex;
+  gap: 24px;
+}
 </style>

@@ -17,9 +17,7 @@ export default {
   components: {
     HeroBanner,
     Stripe,
-    Cards
-    
-
+    Cards,
   }
 }
 </script>
